@@ -36,11 +36,19 @@
             <e p="ICrushable.cs" t="Include" />
           </e>
           <e p="Managers" t="Include">
+            <e p="CharacterManager.cs" t="Include" />
             <e p="EventManager.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
             <e p="Managers.cs" t="Include" />
+            <e p="ObstacleManager.cs" t="Include" />
+          </e>
+          <e p="Objects" t="Include">
+            <e p="CollectableCube.cs" t="Include" />
+            <e p="CollectableCubeBase.cs" t="Include" />
+            <e p="CrushableCube.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
+            <e p="Collector.cs" t="Include" />
             <e p="Player.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
           </e>

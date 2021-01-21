@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        EventManager.OnLevelStart.Invoke();
+        EventManager.OnLevelStart.Invoke();  //düzenlenecek şimdilik böyle.
     }
 
     private void OnEnable()
@@ -63,8 +63,9 @@ public class PlayerController : MonoBehaviour
 
     public void Move()
     {
-       
-       Rigidbody.velocity = new Vector3(Joystick.Horizontal * _horizontalSpeed, 0, _moveSpeed);
+        //Rigidbody.velocity = new Vector3(Joystick.Horizontal * _horizontalSpeed, 0, _moveSpeed);
+        transform.Translate(Vector3.forward * _moveSpeed * Time.deltaTime);
+        transform.Translate(Vector3.right * Joystick.Horizontal * _horizontalSpeed * Time.deltaTime);
        
        if (transform.position.x <= -3.5f)
            transform.position = new Vector3(-3.5f, transform.position.y, transform.position.z);
