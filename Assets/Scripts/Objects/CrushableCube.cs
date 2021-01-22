@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrushableCube : MonoBehaviour
+public class CrushableCube : MonoBehaviour, ICrushable
 {
-    // Start is called before the first frame update
-    void Start()
+    private Rigidbody _rigidbody;
+    public void Crush(GameObject gameObjectToDetachFromParent)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        gameObjectToDetachFromParent.transform.parent = null;
+        _rigidbody = gameObjectToDetachFromParent.GetComponent<Rigidbody>();
+        _rigidbody.isKinematic = false;
+        _rigidbody.useGravity = true;
+        CollectableCubeBase.Instance.cubes.Remove(gameObjectToDetachFromParent);
+        //then will make DESTROY
     }
 }
