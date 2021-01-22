@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollectableCubeBase : Singleton<CollectableCubeBase>
+public class CubeManager : Singleton<CubeManager>
 {
     public List<GameObject> cubes;
+    public float hightOfCube = 0.5f;
     
     public GameObject GetLastElement()
     {
@@ -12,6 +13,5 @@ public class CollectableCubeBase : Singleton<CollectableCubeBase>
             return null;
         
         return cubes[cubes.Count - 1];
-        
     }
 }

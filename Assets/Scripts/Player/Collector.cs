@@ -15,8 +15,12 @@ public class Collector : MonoBehaviour
             return;
         
         collectableCube.Collect();
-        transform.parent.position += Vector3.up * 0.50f; // Throw object to high according to collected amount of boxes. 
+        
+        EventManager.OnCubeCollected.Invoke();
+        
         transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y + 5f, transform.localScale.z); //Increase the size of collector object
         _collider.size = new Vector3(_collider.size.x, _collider.size.y * 2f, _collider.size.z); // Increase the size of y value of the collector's collider.
+        
+        
     }
 }
