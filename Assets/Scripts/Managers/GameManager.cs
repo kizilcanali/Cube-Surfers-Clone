@@ -16,9 +16,9 @@ public class GameManager : Singleton<GameManager>
         set { _playerCoinAmount = value; }
     }
 
-    private void Start()
+    private void Update()
     {
-        //GameStarter();   // temporary this will connect to button
+       FailFinish();
     }
 
     public void GameStarter()
@@ -29,7 +29,15 @@ public class GameManager : Singleton<GameManager>
 
     public void GameFinisher()
     {
-        EventManager.OnGameEnd.Invoke();  //here may change with level finish because of finishing situations
+        EventManager.OnGameEnd.Invoke(); 
         isGameStarted = false;
+    }
+
+    public void FailFinish()
+    {
+        if (CubeManager.Instance.cubes.Count == 0)
+        {
+            EventManager.OnLevelFail.Invoke();
+        }
     }
 }

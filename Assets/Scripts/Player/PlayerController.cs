@@ -25,19 +25,17 @@ public class PlayerController : MonoBehaviour
     }
     
     public bool isControllable;
+    //public bool isRunning;
     
-    private void Start()
-    {
-        //EventManager.OnLevelStart.Invoke();  //düzenlenecek şimdilik böyle.
-    }
 
     private void OnEnable()
     {
         if (Managers.Instance == null)
             return;
-        
+
         EventManager.OnLevelStart.AddListener(() => isControllable = true);
         EventManager.OnLevelFinish.AddListener(() => isControllable = false);
+        EventManager.OnLevelFail.AddListener(() => isControllable = false);
     }
 
     private void OnDisable()
@@ -47,6 +45,7 @@ public class PlayerController : MonoBehaviour
         
         EventManager.OnLevelStart.RemoveListener(() => isControllable = true);
         EventManager.OnLevelFinish.RemoveListener(() => isControllable = false);
+        EventManager.OnLevelFail.AddListener(() => isControllable = false);
         
     }
     

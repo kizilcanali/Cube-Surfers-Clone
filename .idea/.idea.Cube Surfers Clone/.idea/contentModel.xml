@@ -8,6 +8,11 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="BizulkaProduction" t="Include">
+          <e p="Stickman" t="Include">
+            <e p="readme.txt" t="Include" />
+          </e>
+        </e>
         <e p="Joystick Pack" t="Include">
           <e p="Examples" t="Include">
             <e p="JoystickPlayerExample.cs" t="Include" />
@@ -66,6 +71,7 @@
             <e p="DiamondCollectable.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
+            <e p="AnimationController.cs" t="Include" />
             <e p="Collector.cs" t="Include" />
             <e p="Player.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
@@ -79,6 +85,7 @@
             <e p="SuccessPanel.cs" t="Include" />
           </e>
           <e p="Utilities" t="Include">
+            <e p="ProgressBar.cs" t="Include" />
             <e p="Singleton.cs" t="Include" />
           </e>
         </e>
