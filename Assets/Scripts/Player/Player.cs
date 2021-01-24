@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
 
     void PlayerPositionCollectedOrganiser()
     {
-        transform.position = new Vector3(transform.position.x,  CubeManager.Instance.hightOfCube * CubeManager.Instance.cubes.Count, transform.position.z);
+        transform.position = new Vector3(transform.position.x,  CubeManager.Instance.hightOfCube * CubeManager.Instance.cubes.Count -0.2f, transform.position.z);
     }
 
     public IEnumerator WaitTillDropCubes()
