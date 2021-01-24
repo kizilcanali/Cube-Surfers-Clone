@@ -63,11 +63,11 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.forward * _moveSpeed * Time.deltaTime);
         transform.Translate(Vector3.right * Joystick.Horizontal * _horizontalSpeed * Time.deltaTime);
         
-       if (transform.position.x <= -3.5f)
-           transform.position = new Vector3(-3.5f, transform.position.y, transform.position.z);
+       if (transform.position.x <= -2.25f)
+           transform.position = new Vector3(-2.25f, transform.position.y, transform.position.z);
         
-       if(transform.position.x >= 3.5f)
-           transform.position = new Vector3(3.5f, transform.position.y, transform.position.z);
+       if(transform.position.x >= 2.25f)
+           transform.position = new Vector3(2.25f, transform.position.y, transform.position.z);
         
     }
 }

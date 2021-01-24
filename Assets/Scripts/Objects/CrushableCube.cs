@@ -19,4 +19,6 @@ public class CrushableCube : MonoBehaviour, ICrushable
         EventManager.OnCubeCrushed.Invoke();
         
     }
+
+    public void CrashForBonus(){}
 }

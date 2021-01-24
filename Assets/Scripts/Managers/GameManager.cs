@@ -7,7 +7,9 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     public bool isGameStarted;
-    
+    public bool isLevelFailed = false;
+
+    public int bonusAmount;
     
     private int _playerCoinAmount;
     public int PlayerCoinAmount
@@ -38,6 +40,7 @@ public class GameManager : Singleton<GameManager>
         if (CubeManager.Instance.cubes.Count == 0)
         {
             EventManager.OnLevelFail.Invoke();
+           //isLevelFailed = true;
         }
     }
 }

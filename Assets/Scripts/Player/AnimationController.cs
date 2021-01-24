@@ -22,7 +22,11 @@ public class AnimationController : MonoBehaviour
         if(Managers.Instance == null)
             return;
         
-        EventManager.OnCubeCrushed.AddListener(() => InvokeTrigger("Crash"));
+        EventManager.OnCubeCrushed.AddListener(() =>
+        {
+            //if(GameManager.Instance.isLevelFailed == false)
+            InvokeTrigger("Crash");
+        });
         EventManager.OnLevelFail.AddListener(() => InvokeTrigger("Finish")); //fail anim
 
     }
@@ -32,7 +36,11 @@ public class AnimationController : MonoBehaviour
         if(Managers.Instance == null)
             return;
         
-        EventManager.OnCubeCrushed.RemoveListener(() => InvokeTrigger("Crash"));
+        EventManager.OnCubeCrushed.RemoveListener(() =>
+        {
+            //if(GameManager.Instance.isLevelFailed == false)
+            InvokeTrigger("Crash");
+        });
         EventManager.OnLevelFail.RemoveListener(() => InvokeTrigger("Finish")); //about fail
         
     }

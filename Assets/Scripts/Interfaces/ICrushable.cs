@@ -5,4 +5,5 @@ using UnityEngine;
 public interface ICrushable
 {
     void Crush(GameObject g);
+    void CrashForBonus();
 }
