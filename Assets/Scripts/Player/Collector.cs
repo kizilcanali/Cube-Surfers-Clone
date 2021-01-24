@@ -17,10 +17,9 @@ public class Collector : MonoBehaviour
         collectableCube.Collect();
         
         EventManager.OnCubeCollected.Invoke();
+        EventManager.OnCoinCollected.Invoke();
         
-        transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y + 5f, transform.localScale.z); //Increase the size of collector object
-        _collider.size = new Vector3(_collider.size.x, _collider.size.y * 2f, _collider.size.z); // Increase the size of y value of the collector's collider.
-        
+        _collider.size = new Vector3(_collider.size.x, _collider.size.y + 2f, _collider.size.z); // Increase the size of y value of the collector's collider.
         
     }
 }

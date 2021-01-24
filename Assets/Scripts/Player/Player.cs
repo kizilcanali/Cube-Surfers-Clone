@@ -23,6 +23,9 @@ public class Player : MonoBehaviour
         EventManager.OnCubeCrushed.RemoveListener(() => StartCoroutine(WaitTillDropCubes()));
     }
 
+    public bool isDeath; //check for the death state
+    public bool isControllable;  //will use for the control character
+
     void PlayerPositionCollectedOrganiser()
     {
         transform.position = new Vector3(transform.position.x,  CubeManager.Instance.hightOfCube * CubeManager.Instance.cubes.Count, transform.position.z);
@@ -34,6 +37,10 @@ public class Player : MonoBehaviour
         
         transform.DOMoveY(CubeManager.Instance.hightOfCube * CubeManager.Instance.cubes.Count, 0.5f);
 
-    } 
+    }
+    
+    
+    
+    
     
 }

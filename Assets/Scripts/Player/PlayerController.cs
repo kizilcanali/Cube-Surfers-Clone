@@ -23,16 +23,12 @@ public class PlayerController : MonoBehaviour
     {
         get { return (_rigidbody == null) ? _rigidbody = GetComponent<Rigidbody>() : _rigidbody; }
     }
-    private bool _isRunning;
-    public bool IsRunning
-    {
-        get { return _isRunning; }
-        set { _isRunning = value; }
-    }
-
+    
+    public bool isControllable;
+    
     private void Start()
     {
-        EventManager.OnLevelStart.Invoke();  //düzenlenecek şimdilik böyle.
+        //EventManager.OnLevelStart.Invoke();  //düzenlenecek şimdilik böyle.
     }
 
     private void OnEnable()
@@ -40,8 +36,8 @@ public class PlayerController : MonoBehaviour
         if (Managers.Instance == null)
             return;
         
-        EventManager.OnLevelStart.AddListener(() => IsRunning = true);
-        EventManager.OnLevelFinish.AddListener(() => IsRunning = false);
+        EventManager.OnLevelStart.AddListener(() => isControllable = true);
+        EventManager.OnLevelFinish.AddListener(() => isControllable = false);
     }
 
     private void OnDisable()
@@ -49,24 +45,25 @@ public class PlayerController : MonoBehaviour
         if (Managers.Instance == null)
             return;
         
-        EventManager.OnLevelStart.RemoveListener(() => IsRunning = true);
-        EventManager.OnLevelFinish.RemoveListener(() => IsRunning = false);
+        EventManager.OnLevelStart.RemoveListener(() => isControllable = true);
+        EventManager.OnLevelFinish.RemoveListener(() => isControllable = false);
+        
     }
     
 
     private void Update()
     {
-        //if (IsRunning)
-           // return;
         Move();
     }
 
     public void Move()
     {
-        //Rigidbody.velocity = new Vector3(Joystick.Horizontal * _horizontalSpeed, 0, _moveSpeed);
+        if (isControllable == false)
+            return;
+        
         transform.Translate(Vector3.forward * _moveSpeed * Time.deltaTime);
         transform.Translate(Vector3.right * Joystick.Horizontal * _horizontalSpeed * Time.deltaTime);
-       
+        
        if (transform.position.x <= -3.5f)
            transform.position = new Vector3(-3.5f, transform.position.y, transform.position.z);
         

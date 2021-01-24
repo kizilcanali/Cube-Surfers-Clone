@@ -7,10 +7,18 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     public bool isGameStarted;
+    
+    
+    private int _playerCoinAmount;
+    public int PlayerCoinAmount
+    {
+        get { return _playerCoinAmount; }
+        set { _playerCoinAmount = value; }
+    }
 
     private void Start()
     {
-        GameStarter();   // temporary this will connect to button
+        //GameStarter();   // temporary this will connect to button
     }
 
     public void GameStarter()

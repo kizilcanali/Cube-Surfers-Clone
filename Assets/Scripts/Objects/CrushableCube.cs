@@ -17,5 +17,6 @@ public class CrushableCube : MonoBehaviour, ICrushable
         CubeManager.Instance.cubes.Remove(gameObjectToDetachFromParent);
         
         EventManager.OnCubeCrushed.Invoke();
+        
     }
 }

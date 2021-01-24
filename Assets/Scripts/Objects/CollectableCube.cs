@@ -8,9 +8,7 @@ using DG.Tweening;
 
 public class CollectableCube : MonoBehaviour, ICollectable
 {
-
-  //public GameObject collectableObject;
-  //public GameObject parentGameObject; //this will reorganise with singleton managers
+  
   private Transform _characterTransform;
   private Rigidbody _rigidbody;
 
