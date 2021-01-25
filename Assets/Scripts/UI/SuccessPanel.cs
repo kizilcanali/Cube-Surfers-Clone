@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SuccessPanel : Panel
 {
     public TextMeshProUGUI bonusCointText;
+    public TextMeshProUGUI earnedCoins;
     
     private Animator _animator;
     public Animator Animator
@@ -26,6 +28,7 @@ public class SuccessPanel : Panel
             
         });
         EventManager.OnGameStart.AddListener(HidePanel);
+        EventManager.OnLevelSuccess.AddListener(TextSetter);
     }
 
     private void OnDisable()
@@ -35,16 +38,19 @@ public class SuccessPanel : Panel
         
         EventManager.OnLevelSuccess.RemoveListener(ShowPanel);
         EventManager.OnGameStart.RemoveListener(HidePanel);
+        EventManager.OnLevelSuccess.RemoveListener(TextSetter);
     }
 
     void InvokeTrigger(string triggerName)
     {
         Animator.SetTrigger(triggerName);
     }
+    
 
     void TextSetter()
     {
-        //bonusCointText.text = "Great! {0}" + GameManager.Instance.bonusAmount + "X";
+        bonusCointText.text = "Great!" + " " + GameManager.Instance.bonusAmount.ToString() + "X" ;
+        earnedCoins.text = GameManager.Instance.PlayerCoinAmount.ToString();
     }
     
     

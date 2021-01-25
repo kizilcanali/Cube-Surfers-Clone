@@ -10,7 +10,6 @@ public class CrushableCube : MonoBehaviour, ICrushable
     {
         gameObjectToDetachFromParent.transform.parent = null;
         Rigidbody _rigidbody = gameObjectToDetachFromParent.GetComponent<Rigidbody>();
-        
         _rigidbody.isKinematic = false;
         _rigidbody.useGravity = true;
         gameObjectToDetachFromParent.GetComponent<BoxCollider>().isTrigger = false;

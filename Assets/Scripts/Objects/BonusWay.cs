@@ -6,12 +6,14 @@ public class BonusWay : MonoBehaviour, ICrushable
 {
     public int bonusAmount;
     int newPointAmount;
+    
     public void CrashForBonus()
     {
-        GameManager.Instance.bonusAmount = bonusAmount;
+        if (GameManager.Instance.bonusAmount == bonusAmount)
+            return;
 
+        GameManager.Instance.bonusAmount = bonusAmount;
         newPointAmount = GameManager.Instance.PlayerCoinAmount * bonusAmount;
-        
         GameManager.Instance.PlayerCoinAmount = newPointAmount;
 
         Debug.Log(bonusAmount);

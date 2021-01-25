@@ -38,11 +38,11 @@ public class CollectableCube : MonoBehaviour, ICollectable
 
   public void Collect()
   {
-    //Vector3 lastObject = CubeManager.Instance.GetLastElement().transform.position;
-    
     CubeManager.Instance.cubes.Insert(0, gameObject); //add to list's first position
     transform.position = new Vector3(_characterTransform.position.x, 0f, _characterTransform.position.z);
     gameObject.transform.parent = _characterTransform;
+    EventManager.OnCubeCollected.Invoke();
+
   }
 
   void CollectedCubePositionOrganiser()
@@ -66,7 +66,7 @@ public class CollectableCube : MonoBehaviour, ICollectable
   
   public IEnumerator WaitTillDropCubes()
   {
-    yield return new WaitForSeconds(0.5f);
+    yield return new WaitForSeconds(0.3f);
     
     if (!CubeManager.Instance.cubes.Contains(gameObject))
       yield break;

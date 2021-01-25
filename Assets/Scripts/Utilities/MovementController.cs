@@ -4,5 +4,5 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 public class MovementController : MonoBehaviour, IPointerDownHandler
 {
-    public void OnPointerDown(PointerEventData eventData) => EventManager.OnTapDown.Invoke();
+    public void OnPointerDown(PointerEventData eventData) => EventManager.OnTapDown.Invoke();  //used for solve tab to start problem.
 }

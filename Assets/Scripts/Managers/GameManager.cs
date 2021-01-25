@@ -42,7 +42,7 @@ public class GameManager : Singleton<GameManager>
         if (CubeManager.Instance.cubes.Count == 0 && GameManager.Instance.isFinishLinePassed == false)
         {
             EventManager.OnLevelFail.Invoke();
-           //isLevelFailed = true;
+            isLevelFailed = true;
         }
     }
 

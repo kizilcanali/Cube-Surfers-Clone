@@ -23,9 +23,6 @@ public class Player : MonoBehaviour
         EventManager.OnCubeCrushed.RemoveListener(() => StartCoroutine(WaitTillDropCubes()));
     }
 
-    public bool isDeath; //check for the death state
-    public bool isControllable;  //will use for the control character
-
     void PlayerPositionCollectedOrganiser()
     {
         transform.position = new Vector3(transform.position.x,  CubeManager.Instance.hightOfCube * CubeManager.Instance.cubes.Count -0.2f, transform.position.z);
@@ -33,9 +30,12 @@ public class Player : MonoBehaviour
 
     public IEnumerator WaitTillDropCubes()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
         
-        transform.DOMoveY(CubeManager.Instance.hightOfCube * CubeManager.Instance.cubes.Count, 0.5f);
+        if (GameManager.Instance.isLevelFailed || GameManager.Instance.isFinishLinePassed)
+            yield break;
+        
+        transform.DOMoveY(CubeManager.Instance.hightOfCube * CubeManager.Instance.cubes.Count -0.2f, 0.5f);
 
     }
     
