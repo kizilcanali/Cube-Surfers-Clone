@@ -23,7 +23,6 @@ public class BonusWay : MonoBehaviour, ICrushable
     }
     
     
-
     public void Crush(GameObject g)
     {
         g.transform.parent = null;
@@ -34,6 +33,5 @@ public class BonusWay : MonoBehaviour, ICrushable
         g.GetComponent<BoxCollider>().isTrigger = false;
         CubeManager.Instance.cubes.Remove(g);
         
-        EventManager.OnCubeCrushed.Invoke();
     }
 }

@@ -25,10 +25,10 @@ public class SuccessPanel : Panel
         {
             ShowPanel();
             InvokeTrigger("SuccessText");
-            
+            TextSetter();
         });
         EventManager.OnGameStart.AddListener(HidePanel);
-        EventManager.OnLevelSuccess.AddListener(TextSetter);
+        
     }
 
     private void OnDisable()
@@ -36,9 +36,14 @@ public class SuccessPanel : Panel
         if (Managers.Instance == null)
             return;
         
-        EventManager.OnLevelSuccess.RemoveListener(ShowPanel);
+        EventManager.OnLevelSuccess.RemoveListener(() =>
+        {
+            ShowPanel();
+            InvokeTrigger("SuccessText");
+            TextSetter();
+        });
         EventManager.OnGameStart.RemoveListener(HidePanel);
-        EventManager.OnLevelSuccess.RemoveListener(TextSetter);
+        
     }
 
     void InvokeTrigger(string triggerName)
