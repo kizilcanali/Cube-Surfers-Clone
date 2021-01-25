@@ -60,6 +60,7 @@ public class CollectableCube : MonoBehaviour, ICollectable
       return;
     
     crushableCube.Crush(gameObject);
+    crushableCube.CrashForBonus();
     
   }
   

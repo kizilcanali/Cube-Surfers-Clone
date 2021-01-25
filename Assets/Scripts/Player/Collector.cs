@@ -11,16 +11,20 @@ public class Collector : MonoBehaviour
     {
         var collectableCube = other.GetComponent<ICollectable>();
 
-        if (collectableCube == null)
-            return;
+        if (collectableCube != null)
+        {
+            collectableCube.Collect();
         
-        collectableCube.Collect();
+            EventManager.OnCubeCollected.Invoke();
         
+            _collider.size = new Vector3(_collider.size.x, _collider.size.y + 2f, _collider.size.z); // Increase the size of y value of the collector's collider.
+        }
         
-        EventManager.OnCubeCollected.Invoke();
-        //EventManager.OnCoinCollected.Invoke();
-        
-        _collider.size = new Vector3(_collider.size.x, _collider.size.y + 2f, _collider.size.z); // Increase the size of y value of the collector's collider.
+        if (other.gameObject.tag == "FinishLine")
+        {
+            GameManager.Instance.isFinishLinePassed = true;
+            Debug.Log("Im here");
+        }
         
     }
 }

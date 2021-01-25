@@ -8,7 +8,7 @@ public class GameManager : Singleton<GameManager>
 {
     public bool isGameStarted;
     public bool isLevelFailed = false;
-
+    public bool isFinishLinePassed = false;
     public int bonusAmount;
     
     private int _playerCoinAmount;
@@ -21,6 +21,7 @@ public class GameManager : Singleton<GameManager>
     private void Update()
     {
        FailFinish();
+       SuccessFinish();
     }
 
     public void GameStarter()
@@ -37,10 +38,18 @@ public class GameManager : Singleton<GameManager>
 
     public void FailFinish()
     {
-        if (CubeManager.Instance.cubes.Count == 0)
+        if (CubeManager.Instance.cubes.Count == 0 && GameManager.Instance.isFinishLinePassed == false)
         {
             EventManager.OnLevelFail.Invoke();
            //isLevelFailed = true;
+        }
+    }
+
+    public void SuccessFinish()
+    {
+        if (CubeManager.Instance.cubes.Count == 0 && GameManager.Instance.isFinishLinePassed == true)
+        {
+            EventManager.OnLevelSuccess.Invoke();
         }
     }
 }

@@ -44,7 +44,7 @@ public class SuccessPanel : Panel
 
     void TextSetter()
     {
-        bonusCointText.text = "Great! {0}" + GameManager.Instance.bonusAmount + "X";
+        //bonusCointText.text = "Great! {0}" + GameManager.Instance.bonusAmount + "X";
     }
     
     
