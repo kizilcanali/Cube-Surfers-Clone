@@ -16,8 +16,8 @@ public class BonusWay : MonoBehaviour, ICrushable
         newPointAmount = GameManager.Instance.PlayerCoinAmount * bonusAmount;
         GameManager.Instance.PlayerCoinAmount = newPointAmount;
 
-        Debug.Log(bonusAmount);
-        Debug.Log(GameManager.Instance.PlayerCoinAmount);
+       // Debug.Log(bonusAmount);
+       // Debug.Log(GameManager.Instance.PlayerCoinAmount);
         
         
     }

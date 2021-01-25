@@ -38,6 +38,7 @@ public class CollectableCube : MonoBehaviour, ICollectable
 
   public void Collect()
   {
+    
     CubeManager.Instance.cubes.Insert(0, gameObject); //add to list's first position
     transform.position = new Vector3(_characterTransform.position.x, 0f, _characterTransform.position.z);
     gameObject.transform.parent = _characterTransform;
