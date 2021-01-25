@@ -9,6 +9,7 @@ public class GameManager : Singleton<GameManager>
     public bool isGameStarted;
     public bool isLevelFailed = false;
     public bool isFinishLinePassed = false;
+    public bool isLevelSuccess = false;
     public int bonusAmount;
     
     private int _playerCoinAmount;
@@ -26,7 +27,7 @@ public class GameManager : Singleton<GameManager>
 
     public void GameStarter()
     {
-        EventManager.OnGameStart.Invoke();
+        //EventManager.OnGameStart.Invoke();
         isGameStarted = true;
     }
 

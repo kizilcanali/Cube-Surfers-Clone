@@ -95,6 +95,7 @@
             <e p="SuccessPanel.cs" t="Include" />
           </e>
           <e p="Utilities" t="Include">
+            <e p="MovementController.cs" t="Include" />
             <e p="ProgressBar.cs" t="Include" />
             <e p="Singleton.cs" t="Include" />
             <e p="Sound.cs" t="Include" />

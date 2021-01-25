@@ -5,14 +5,22 @@ using UnityEngine;
 public class BonusWay : MonoBehaviour, ICrushable
 {
     public int bonusAmount;
-    
+    int newPointAmount;
     public void CrashForBonus()
     {
         GameManager.Instance.bonusAmount = bonusAmount;
-        int newPointAmount;
+
         newPointAmount = GameManager.Instance.PlayerCoinAmount * bonusAmount;
+        
+        GameManager.Instance.PlayerCoinAmount = newPointAmount;
+
+        Debug.Log(bonusAmount);
         Debug.Log(GameManager.Instance.PlayerCoinAmount);
+        
+        
     }
+    
+    
 
     public void Crush(GameObject g)
     {

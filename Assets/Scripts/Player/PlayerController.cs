@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
         EventManager.OnLevelFinish.AddListener(() => isControllable = false);
         EventManager.OnLevelFail.AddListener(() => isControllable = false);
         EventManager.OnLevelSuccess.AddListener(() => isControllable = false);
+        EventManager.OnTapDown.AddListener(() => isControllable = true);
     }
 
     private void OnDisable()
@@ -48,6 +49,7 @@ public class PlayerController : MonoBehaviour
         EventManager.OnLevelFinish.RemoveListener(() => isControllable = false);
         EventManager.OnLevelFail.AddListener(() => isControllable = false);
         EventManager.OnLevelSuccess.AddListener(() => isControllable = false);
+        EventManager.OnTapDown.AddListener(() => isControllable = true);
         
     }
     

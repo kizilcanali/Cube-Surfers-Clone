@@ -20,4 +20,5 @@ public static class EventManager
     public static UnityEvent OnCoinCollected = new UnityEvent();
     
     public static UnityEvent OnSceneLoad = new UnityEvent();
+    public static UnityEvent OnTapDown = new UnityEvent();
 }

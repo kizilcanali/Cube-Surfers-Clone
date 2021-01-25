@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GameStartPanel : Panel
 {
+
     private void Awake()
     {
         ShowPanel();
@@ -15,7 +16,8 @@ public class GameStartPanel : Panel
         if(Managers.Instance == null)
             return;
         
-        EventManager.OnLevelStart.AddListener(HidePanel);
+        //EventManager.OnLevelStart.AddListener(HidePanel);
+        EventManager.OnTapDown.AddListener(HidePanel);
     }
 
     private void OnDisable()
@@ -23,6 +25,8 @@ public class GameStartPanel : Panel
         if(Managers.Instance == null)
             return;
         
-        EventManager.OnLevelStart.RemoveListener(HidePanel);
+        //EventManager.OnLevelStart.RemoveListener(HidePanel);
+        EventManager.OnTapDown.RemoveListener(HidePanel);
     }
+  
 }

@@ -23,7 +23,7 @@ public class Collector : MonoBehaviour
         if (other.gameObject.tag == "FinishLine")
         {
             GameManager.Instance.isFinishLinePassed = true;
-            Debug.Log("Im here");
+            //Debug.Log("Im here");
         }
         
     }
