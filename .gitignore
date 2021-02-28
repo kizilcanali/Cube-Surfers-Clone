@@ -9,6 +9,7 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
+Assets/ThirdParty*
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
@@ -56,8 +57,6 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
-# Packed Addressables
-/[Aa]ssets/ThirdParty/*
 
 # Crashlytics generated file
 crashlytics-build.properties
