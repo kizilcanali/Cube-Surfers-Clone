@@ -9,7 +9,7 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
-Assets/ThirdParty*
+/[Aa]Assets/ThirdParty/*
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
