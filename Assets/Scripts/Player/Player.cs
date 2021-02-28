@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
             yield break;
         
         transform.DOMoveY(CubeManager.Instance.hightOfCube * CubeManager.Instance.cubes.Count -0.2f, 0.5f);
-
+        
     }
     
     

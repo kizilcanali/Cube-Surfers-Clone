@@ -48,7 +48,7 @@ public class AudioManager : Singleton<AudioManager>
 
     void Start()
     {
-        Play("Music");
+        //Play("Music");
     }
 
     public void Play(string name)

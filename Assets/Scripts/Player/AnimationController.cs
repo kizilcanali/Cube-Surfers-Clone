@@ -18,7 +18,7 @@ public class AnimationController : MonoBehaviour
         get { return (_player == null) ? _player = GetComponent<Player>() : _player; }
     }
 
-    private bool isCrashOn;
+    private bool isCrashOn;   
     private bool isCollectOn;
     
     private void OnEnable()
@@ -34,7 +34,7 @@ public class AnimationController : MonoBehaviour
         EventManager.OnLevelFail.AddListener(() => InvokeTrigger("Finish")); //fail anim
         EventManager.OnCubeCollected.AddListener(() =>
         {
-            if (isCollectOn)
+            if (isCollectOn) //is true
                 return;
             isCollectOn = true;
             InvokeTrigger("Jump");

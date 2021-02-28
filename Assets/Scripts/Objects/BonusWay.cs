@@ -18,8 +18,6 @@ public class BonusWay : MonoBehaviour, ICrushable
 
        // Debug.Log(bonusAmount);
        // Debug.Log(GameManager.Instance.PlayerCoinAmount);
-        
-        
     }
     
     
